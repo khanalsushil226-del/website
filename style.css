@@ -530,7 +530,7 @@ a {
     gap: 25px;
     width: max-content;
 
-    animation: staffScroll 35s linear infinite;
+    animation: staffScroll 45s linear infinite;
 }
 
 .staff-card {
