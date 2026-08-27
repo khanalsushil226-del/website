@@ -28,16 +28,20 @@ a {
 }
 
 
+
 /* ================================
    HEADER
 ================================ */
 
 .header {
     min-height: 230px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 35px 8%;
+
     background: white;
 }
 
@@ -50,27 +54,37 @@ a {
 .school-brand img {
     width: 130px;
     height: 130px;
+
     object-fit: contain;
 }
 
 .school-name h1 {
     color: #101d55;
+
     font-size: 38px;
+
     margin-bottom: 8px;
 }
 
 .school-name p {
     color: #101d55;
+
     font-size: 23px;
+
     font-weight: bold;
 }
 
 .date-box {
     background: #07539a;
+
     color: white;
+
     padding: 18px 25px;
+
     border-radius: 10px;
+
     min-width: 250px;
+
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -80,8 +94,11 @@ a {
 
 .date-box p {
     color: #ffd21c;
+
     font-size: 18px;
+
     font-weight: bold;
+
     margin: 5px 0;
 }
 
@@ -90,35 +107,46 @@ a {
 }
 
 
+
 /* ================================
    NAVIGATION
 ================================ */
 
 .navbar {
     background: #142f5b;
+
     border-top: 3px solid #e3a900;
 }
 
 .nav-container {
     max-width: 1500px;
+
     margin: auto;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
 }
 
 .nav-container a {
     color: white;
+
     font-weight: bold;
+
     font-size: 15px;
+
     padding: 22px 18px;
+
     transition: 0.3s;
 }
 
 .nav-container a:hover {
     background: #e3a900;
+
     color: #111;
 }
+
 
 
 /* ================================
@@ -127,52 +155,72 @@ a {
 
 .hero {
     height: 520px;
+
     position: relative;
+
     overflow: hidden;
 }
 
 .hero img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
 .hero::after {
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     background: rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
     position: absolute;
+
     z-index: 2;
+
     top: 50%;
     left: 8%;
+
     transform: translateY(-50%);
+
     color: white;
+
     max-width: 600px;
 }
 
 .hero-content h2 {
     font-size: 50px;
+
     margin-bottom: 15px;
 }
 
 .hero-content p {
     font-size: 21px;
+
     line-height: 1.6;
+
     margin-bottom: 25px;
 }
 
 .hero-button {
     display: inline-block;
+
     background: #e3a900;
+
     color: #111;
+
     padding: 13px 25px;
+
     font-weight: bold;
+
     border-radius: 5px;
 }
+
 
 
 /* ================================
@@ -185,19 +233,24 @@ a {
 
 .section-title {
     text-align: center;
+
     margin-bottom: 50px;
 }
 
 .section-title h2 {
     color: #142f5b;
+
     font-size: 36px;
+
     margin-bottom: 8px;
 }
 
 .section-title p {
     color: #777;
+
     font-size: 17px;
 }
+
 
 
 /* ================================
@@ -206,39 +259,187 @@ a {
 
 .about-content {
     max-width: 1200px;
+
     margin: auto;
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 50px;
+
     align-items: center;
 }
 
 .about-text h3 {
     color: #142f5b;
+
     font-size: 28px;
+
     margin-bottom: 20px;
 }
 
 .about-text p {
     line-height: 1.8;
+
     margin-bottom: 15px;
 }
 
 .read-more {
     display: inline-block;
+
     margin-top: 15px;
+
     padding: 12px 22px;
+
     background: #142f5b;
+
     color: white;
+
     border-radius: 4px;
 }
 
 .about-image img {
     width: 100%;
+
     height: 330px;
+
     object-fit: cover;
+
     border-radius: 8px;
 }
+
+
+
+/* ================================
+   STAFF / TEACHERS CAROUSEL
+================================ */
+
+.staff-section {
+    padding: 80px 0;
+
+    background: white;
+
+    overflow: hidden;
+}
+
+
+/* Section title keeps normal spacing */
+
+.staff-section .section-title {
+    padding: 0 8%;
+}
+
+
+/* Carousel viewport */
+
+.staff-carousel {
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+
+    cursor: grab;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    touch-action: pan-y;
+}
+
+
+/* Cursor while dragging */
+
+.staff-carousel.dragging {
+    cursor: grabbing;
+}
+
+
+/* Moving track */
+
+.staff-track {
+    display: flex;
+
+    gap: 25px;
+
+    width: max-content;
+
+    will-change: transform;
+}
+
+
+/* Staff card */
+
+.staff-card {
+    width: 230px;
+
+    flex-shrink: 0;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Card hover */
+
+.staff-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Staff image */
+
+.staff-card img {
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    margin: 0 auto 15px;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+/* Staff name */
+
+.staff-card h3 {
+    color: #142f5b;
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
+}
+
+
+/* Staff designation */
+
+.staff-card p {
+    color: #777;
+
+    font-size: 14px;
+}
+
 
 
 /* ================================
@@ -251,18 +452,27 @@ a {
 
 .facility-container {
     max-width: 1200px;
+
     margin: auto;
+
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     gap: 25px;
 }
 
 .facility-card {
     background: white;
+
     padding: 35px 25px;
+
     text-align: center;
+
     border-radius: 8px;
+
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
     transition: 0.3s;
 }
 
@@ -272,18 +482,22 @@ a {
 
 .facility-icon {
     font-size: 40px;
+
     margin-bottom: 15px;
 }
 
 .facility-card h3 {
     color: #142f5b;
+
     margin-bottom: 12px;
 }
 
 .facility-card p {
     color: #666;
+
     line-height: 1.6;
 }
+
 
 
 /* ================================
@@ -292,31 +506,44 @@ a {
 
 .notice-container {
     max-width: 1000px;
+
     margin: auto;
 }
 
 .notice-card {
     display: flex;
+
     align-items: center;
+
     gap: 25px;
+
     padding: 20px;
+
     margin-bottom: 15px;
+
     border: 1px solid #ddd;
+
     border-radius: 6px;
 }
 
 .notice-date {
     background: #142f5b;
+
     color: white;
+
     padding: 15px;
+
     font-weight: bold;
+
     border-radius: 5px;
 }
 
 .notice-card h3 {
     color: #142f5b;
+
     margin-bottom: 6px;
 }
+
 
 
 /* ================================
@@ -329,17 +556,25 @@ a {
 
 .gallery-container {
     max-width: 1200px;
+
     margin: auto;
+
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     gap: 15px;
 }
 
 .gallery-container img {
     width: 100%;
+
     height: 230px;
+
     object-fit: cover;
+
     border-radius: 6px;
+
     transition: 0.3s;
 }
 
@@ -348,28 +583,36 @@ a {
 }
 
 
+
 /* ================================
    CONTACT
 ================================ */
 
 .contact-container {
     max-width: 1100px;
+
     margin: auto;
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 40px;
 }
 
 .contact-info,
 .contact-message {
     padding: 30px;
+
     background: #f5f7fa;
+
     border-radius: 8px;
 }
 
 .contact-info h3,
 .contact-message h3 {
     color: #142f5b;
+
     margin-bottom: 20px;
 }
 
@@ -379,17 +622,24 @@ a {
 
 .contact-message p {
     line-height: 1.7;
+
     margin-bottom: 20px;
 }
 
 .contact-message button {
     border: none;
+
     background: #142f5b;
+
     color: white;
+
     padding: 12px 25px;
+
     border-radius: 4px;
+
     cursor: pointer;
 }
+
 
 
 /* ================================
@@ -398,17 +648,23 @@ a {
 
 .footer {
     background: #142f5b;
+
     color: white;
+
     padding-top: 50px;
 }
 
 .footer-content {
     max-width: 1200px;
+
     margin: auto;
+
     padding: 0 30px 40px;
 
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr;
+
     gap: 50px;
 }
 
@@ -418,21 +674,28 @@ a {
 
 .footer p {
     color: #d5dbea;
+
     line-height: 1.7;
 }
 
 .footer a {
     display: block;
+
     color: #d5dbea;
+
     margin-bottom: 8px;
 }
 
 .copyright {
     text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.2);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
     padding: 20px;
+
     color: #d5dbea;
 }
+
 
 
 /* ================================
@@ -443,21 +706,27 @@ a {
 
     .header {
         flex-direction: column;
+
         gap: 25px;
+
         text-align: center;
     }
+
 
     .school-brand {
         flex-direction: column;
     }
 
+
     .nav-container {
         flex-wrap: wrap;
     }
 
+
     .facility-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
 
     .gallery-container {
         grid-template-columns: repeat(2, 1fr);
@@ -465,6 +734,29 @@ a {
 
 }
 
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 800px) {
+
+    .staff-card {
+        width: 210px;
+    }
+
+    .staff-card img {
+        height: 240px;
+    }
+
+}
+
+
+
+/* ================================
+   MOBILE
+================================ */
 
 @media (max-width: 700px) {
 
@@ -472,114 +764,77 @@ a {
         font-size: 25px;
     }
 
+
     .school-name p {
         font-size: 17px;
     }
+
 
     .nav-container {
         flex-direction: column;
     }
 
+
     .nav-container a {
         width: 100%;
+
         text-align: center;
+
         padding: 14px;
     }
+
 
     .hero {
         height: 450px;
     }
 
+
+    .hero-content {
+        left: 6%;
+
+        right: 6%;
+    }
+
+
     .hero-content h2 {
         font-size: 35px;
     }
+
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
 
     .about-content,
     .contact-container {
         grid-template-columns: 1fr;
     }
 
+
     .facility-container,
     .gallery-container {
         grid-template-columns: 1fr;
     }
 
+
     .footer-content {
         grid-template-columns: 1fr;
     }
 
-}
-/* ================================
-   STAFF CAROUSEL
-================================ */
 
-.staff-section {
-    padding: 80px 0;
-    background: white;
-    overflow: hidden;
-}
-
-.staff-carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.staff-track {
-    display: flex;
-    gap: 25px;
-    width: max-content;
-
-    animation: staffScroll 45s linear infinite;
-}
-
-.staff-card {
-    width: 230px;
-    flex-shrink: 0;
-
-    background: white;
-    border-radius: 10px;
-
-    padding: 20px;
-
-    text-align: center;
-
-    box-shadow: 05 5px 20px rgba(0, 0, 0, 0.10);
-}
-
-.staff-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 0 auto 15px;
-}
-
-.staff-card h3 {
-    color: #142f5b;
-    font-size: 19px;
-
-    margin-bottom: 7px;
-}
-
-.staff-card p {
-    color: #777;
-    font-size: 14px;
-}
-
-
-/* ================================
-   INFINITE ANIMATION
-================================ */
-
-@keyframes staffScroll {
-
-    from {
-        transform: translateX(0);
+    .staff-card {
+        width: 190px;
     }
 
-    to {
-        transform: translateX(-50%);
+
+    .staff-card img {
+        height: 220px;
+    }
+
+
+    .staff-track {
+        gap: 15px;
     }
 
 }
