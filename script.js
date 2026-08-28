@@ -96,13 +96,6 @@ function animateCarousel() {
 
         position -= speed;
 
-
-        /*
-           When the first set of cards
-           has completely moved away,
-           reset position.
-        */
-
         if (Math.abs(position) >= loopWidth) {
 
             position += loopWidth;
@@ -203,10 +196,6 @@ carousel.addEventListener(
             startPosition + distance;
 
 
-        /*
-           Keep the carousel infinite
-        */
-
         if (position > 0) {
 
             position -= loopWidth;
@@ -244,15 +233,6 @@ document.addEventListener(
         carousel.classList.remove(
             "dragging"
         );
-
-
-        /*
-           If mouse is still over carousel,
-           keep it paused.
-
-           If mouse has left,
-           resume automatically.
-        */
 
         if (
             carousel.matches(":hover")
@@ -350,12 +330,110 @@ carousel.addEventListener(
 
         isDragging = false;
 
-        /*
-           On mobile, resume automatically
-           after the swipe.
-        */
 
         isPaused = false;
 
     }
 );
+/* ========================================
+   REAL-TIME NEPAL DATE & TIME
+======================================== */
+
+function updateNepalTime() {
+
+    const now = new Date();
+
+    const options = {
+        timeZone: "Asia/Kathmandu",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+    };
+
+    const time = new Intl.DateTimeFormat(
+        "en-GB",
+        options
+    ).format(now);
+
+
+    const dateOptions = {
+        timeZone: "Asia/Kathmandu",
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    };
+
+    const date = new Intl.DateTimeFormat(
+        "en-GB",
+        dateOptions
+    ).format(now);
+
+
+    /* Convert English numbers to Nepali numbers */
+
+    function nepaliNumbers(value) {
+
+        const nepaliDigits = [
+            "०", "१", "२", "३", "४",
+            "५", "६", "७", "८", "९"
+        ];
+
+        return value.replace(
+            /\d/g,
+            digit => nepaliDigits[digit]
+        );
+    }
+
+
+    /* Convert day names */
+
+    const nepaliDays = {
+        Sunday: "आइतबार",
+        Monday: "सोमबार",
+        Tuesday: "मंगलबार",
+        Wednesday: "बुधबार",
+        Thursday: "बिहिबार",
+        Friday: "शुक्रबार",
+        Saturday: "शनिबार"
+    };
+
+
+    const englishDay = new Intl.DateTimeFormat(
+        "en-US",
+        {
+            timeZone: "Asia/Kathmandu",
+            weekday: "long"
+        }
+    ).format(now);
+
+
+    /* Update time */
+
+    document.getElementById("live-time").textContent =
+        nepaliNumbers(time) + " बजे";
+
+
+    /* Update day */
+
+    document.getElementById("live-day").textContent =
+        nepaliDays[englishDay];
+
+
+    /* Update date */
+
+    document.getElementById("live-date").textContent =
+        nepaliNumbers(date);
+
+}
+
+
+/* Run immediately */
+
+updateNepalTime();
+
+
+/* Update every second */
+
+setInterval(updateNepalTime, 1000);

@@ -36,6 +36,8 @@ a {
 .header {
     min-height: 230px;
 
+    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,6 +51,63 @@ a {
     display: flex;
     align-items: center;
     gap: 25px;
+}
+/* ================================
+   LIVE DATE & TIME
+================================ */
+
+.live-date-box {
+    position: absolute;
+
+    top: 38px;
+    right: 100px;
+
+    background: #07539a;
+    color: white;
+
+    padding: 15px 20px;
+
+    border-radius: 10px;
+
+    min-width: 220px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    z-index: 10;
+}
+
+.live-date-box h3 {
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+.live-date-box p {
+    color: #ffd21c;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 4px;
+}
+
+.live-date-box span {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 3px;
+}
+
+.live-date-box small {
+    color: #d5e4f5;
+
+    font-size: 12px;
 }
 
 .school-brand img {
@@ -74,37 +133,8 @@ a {
     font-weight: bold;
 }
 
-.date-box {
-    background: #07539a;
 
-    color: white;
 
-    padding: 18px 25px;
-
-    border-radius: 10px;
-
-    min-width: 250px;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-.date-box h3 {
-    font-size: 16px;
-}
-
-.date-box p {
-    color: #ffd21c;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    margin: 5px 0;
-}
-
-.date-box span {
-    font-size: 13px;
-}
 
 
 
